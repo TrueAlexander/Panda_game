@@ -1,8 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  
+}
+
 .game {
+  border-radius: 15px;
   width: 1000px;
-  height: 600px;
-  border-bottom: 5px solid green;
+  height: 450px; 
+  border: 1px solid;
+  border-bottom: 10px solid green;
   margin: auto;
+ background: rgb(181, 252, 252);
+
 }
 
 #panda {
@@ -11,7 +27,7 @@
   background-image: url(img/panda.png);
   background-size: 80px 90px;
   position: relative;
-  top: 510px;
+  top: 360px;
   left: 60px;
 }
 
@@ -21,7 +37,7 @@
   background-image: url(img/bamboo.png);
   background-size: cover;
   position: relative;
-  top: 425px;
+  top: 275px;
   left: 970px;
   animation: bambooMov 2s infinite linear;
 }
@@ -31,28 +47,66 @@
     left: 1000px;
   }
   100% {
-    left: -80px;
+    left: -40px;
+  }
+}
+
+
+
+.swing{
+  animation: swing 1s infinite linear;
+  
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(0deg);
+  }
+ 
+  100% {
+    transform: rotate(-5deg);
   }
 }
 
 .jump {
-  animation: jump 0.5s linear;
+  animation: swing 1s infinite linear, jumping 0.5s linear;
 }
 
-@keyframes jump {
+@keyframes jumping {
   0% {
-    top: 510px;
+    top: 360px;
   }
-
-  
 
   50% {
-    top: 250px;
+    top: 150px;
   }
-
- 
 
   100% {
-    top: 510px;
+    top: 360px;
   }
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 15px;
+  color: darkgreen;
+  box-shadow: 0 10px 20px darkgreen;
+  text-transform: uppercase;
+  text-align: center;
+  width: 40%;
+  height: auto;
+  padding: 20px;
+  margin: auto;
 }
