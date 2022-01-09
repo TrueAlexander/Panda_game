@@ -1,0 +1,58 @@
+.game {
+  width: 1000px;
+  height: 600px;
+  border-bottom: 5px solid green;
+  margin: auto;
+}
+
+#panda {
+  width: 80px;
+  height: 90px;
+  background-image: url(img/panda.png);
+  background-size: 80px 90px;
+  position: relative;
+  top: 510px;
+  left: 60px;
+}
+
+#bamboo {
+  width: 55px;
+  height: 90px;
+  background-image: url(img/bamboo.png);
+  background-size: cover;
+  position: relative;
+  top: 425px;
+  left: 970px;
+  animation: bambooMov 2s infinite linear;
+}
+
+@keyframes bambooMov {
+  0% {
+    left: 1000px;
+  }
+  100% {
+    left: -80px;
+  }
+}
+
+.jump {
+  animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 510px;
+  }
+
+  
+
+  50% {
+    top: 250px;
+  }
+
+ 
+
+  100% {
+    top: 510px;
+  }
+}
