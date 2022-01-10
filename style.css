@@ -7,6 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: bisque;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   
 }
 
@@ -14,10 +15,10 @@ body {
   border-radius: 15px;
   width: 1000px;
   height: 450px; 
-  border: 1px solid;
-  border-bottom: 10px solid green;
+  border-bottom: 25px solid green;
   margin: auto;
- background: rgb(181, 252, 252);
+  background: rgb(181, 252, 252);
+  
 
 }
 
@@ -27,7 +28,7 @@ body {
   background-image: url(img/panda.png);
   background-size: 80px 90px;
   position: relative;
-  top: 360px;
+  top: 180px;
   left: 60px;
 }
 
@@ -37,7 +38,7 @@ body {
   background-image: url(img/bamboo.png);
   background-size: cover;
   position: relative;
-  top: 275px;
+  top: 95px;
   left: 970px;
   animation: bambooMov 2s infinite linear;
 }
@@ -81,25 +82,30 @@ body {
 }
 
 .jump {
-  animation: swing 1s infinite linear, jumping 0.5s linear;
+  animation: swing 1s infinite linear, jumping 0.5s ease-in;
 }
 
 @keyframes jumping {
   0% {
-    top: 360px;
+    top: 180px;
   }
 
   50% {
-    top: 150px;
+    top: -100px;
   }
 
   100% {
-    top: 360px;
+    top: 180px;
   }
 }
 
 .modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #fff;
+  border: 1px solid darkgreen;
   border-radius: 15px;
   color: darkgreen;
   box-shadow: 0 10px 20px darkgreen;
@@ -109,4 +115,77 @@ body {
   height: auto;
   padding: 20px;
   margin: auto;
+}
+
+.cloud {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  background: url(img/cloud-seeklogo.com.svg);
+  background-size: 120px 60px;
+  top: 40px;
+  margin-bottom: 30px;
+}
+
+#cloud1 {
+  animation: cloudMov 5s infinite linear;
+}
+
+#cloud2 {
+  animation: cloudMov 3s infinite linear;
+}
+
+@keyframes cloudMov {
+  0% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.btn {
+  background: rgb(181, 252, 252);
+  color: darkgreen;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+} 
+
+.btn:hover {
+  box-shadow: 0 0 5px darkgreen;
+}
+
+.restart-btn {
+  margin-top: 20px;
+  border-radius: 5px; 
+  padding: 5px;
+}
+
+.up-btn {
+  display: none;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 120px);
+  border-radius: 50%;
+  padding: 10px;
+  width: auto;
+  height: 65px;
+}
+
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 700px) and (orientation:portrait) {
+  body {
+    -webkit-transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: darkorange;
+  }
+  .up-btn {
+    display: block;
+  }
 }
