@@ -39,7 +39,7 @@ let isAlive = setInterval(function () {
     cloud2.style.opacity = '0'
     const btnRestart = modal.querySelector('.btn');
     btnUp.disabled = 'true'
-    console.dir(btnUp);
+
 
     btnRestart.addEventListener('click', () => {
       window.location.reload()
