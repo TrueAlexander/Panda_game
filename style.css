@@ -173,7 +173,7 @@ body {
   height: 65px;
 }
 
-
+/*
 @media only screen and (min-device-width: 300px) and (max-device-width: 700px) and (orientation:portrait) {
   body {
     -webkit-transform: rotate(-90deg);
@@ -189,3 +189,4 @@ body {
     display: block;
   }
 }
+*/
